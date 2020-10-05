@@ -1,11 +1,9 @@
-console.log('JStest');
 $(document).ready(onReady)
 let employeeArray = [];
 totalSalary = 0
 
 // fires off functions when page is loaded
 function onReady() {
-    console.log('JQ-test');
     $('#submitNew').on('click' , submitForm );
     $('#addedEmployee').on('click' , ".deleteBtn" , deleteFunc);
 }
@@ -21,6 +19,7 @@ function submitForm(){
      idNumber: $('#idNumber').val(),
      annualSalary: $('#annualSalary').val(),
     }
+    // Values for employeeObject
     console.log('Employee Info:' , employeeObject);
         employeeArray.push( employeeObject);
         $('#firstName').val('');
@@ -63,6 +62,7 @@ el.append( totalSalary );
 tooMuch(totalSalary);
 }
 
+//Alerts you if budget is over
 function tooMuch(totalSalary) {
     if (totalSalary > 20000){
         $('#pleaseWork').addClass("pleaseWork");
@@ -70,12 +70,15 @@ function tooMuch(totalSalary) {
         
 }
 
+//Function to delete employeeObject
 function deleteFunc() {
     console.log('delete');
     $(this).parent().remove();
 }
-//function tableItUp() {
-//$('#tableTime > tbody:last-child').append(`<tr> ${employeeArray[i].firstName} ,
- //${employeeArray[i].lastName} , 
-   // ${employeeArray[i].title} , ${employeeArray[i].idNumber} , ${employeeArray[i].annualSalary} </tr>`);   
-//
+
+// This function was attempting to use tbody to append employeeObject to a table on the on the DOM - doesn't work 
+function tableItUp() {
+$('#tableTime > tbody:last-child').append(`<tr> ${employeeArray[i].firstName} ,
+ ${employeeArray[i].lastName} , 
+    ${employeeArray[i].title} , ${employeeArray[i].idNumber} , ${employeeArray[i].annualSalary} </tr>`);   
+}
