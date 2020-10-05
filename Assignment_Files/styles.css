@@ -1,3 +1,8 @@
-body{
-    background-color: gray;
+table, tr, th {
+    border: 10px gray;
+}
+
+
+.pleaseWork {
+    background-color: red;
 }
